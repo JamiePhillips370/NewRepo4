@@ -1,0 +1,297 @@
+using Newtonsoft.Json.Linq;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class 2435036UI : MonoBehaviour
+{
+    public int money = 100;
+
+    int priceOfObject1 = 40;
+    float priceOfObject2 = 60;
+    float priceOfObject3 = 90;
+    float priceOfObject4 = 20;
+    float priceOfObject5 = 30;
+    float priceOfObject6 = 15;
+
+    public GameObject shopItem1;
+    public GameObject shopItem2;
+    public GameObject shopItem3;
+    public GameObject shopItem4;
+    public GameObject shopItem5;
+    public GameObject shopItem6;
+
+    public GameObject backpackItem1;
+    public GameObject backpackItem2;
+    public GameObject backpackItem3;
+    public GameObject backpackItem4;
+    public GameObject backpackItem5;
+    public GameObject backpackItem6;
+
+    public GameObject chestItem1;
+    public GameObject chestItem2;
+    public GameObject chestItem3;
+    public GameObject chestItem4;
+    public GameObject chestItem5;
+    public GameObject chestItem6;
+
+    public TextMeshProUGUI textmeshpro;
+
+    private void Start()
+    {
+
+
+
+    }
+
+    private void Update()
+    {
+        textmeshpro.text = money.ToString();
+    }
+
+    public void buy1()
+    {
+        if (money >= priceOfObject1)
+        {
+
+            if (shopItem1 != null)
+            {
+                shopItem1.SetActive(false);
+                backpackItem1.SetActive(true);
+                money -= priceOfObject1;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("insufficient funds");
+        }
+    }
+
+    public void buy2()
+    {
+        if (money >= priceOfObject2)
+        {
+
+            if (shopItem2 != null)
+            {
+                shopItem2.SetActive(false);
+                backpackItem2.SetActive(true);
+                money -= (int)priceOfObject2;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("insufficient funds");
+        }
+    }
+
+    public void buy3()
+    {
+        if (money >= priceOfObject3)
+        {
+
+            if (shopItem3 != null)
+            {
+                shopItem3.SetActive(false);
+                backpackItem3.SetActive(true);
+                money -= (int)priceOfObject3;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("insufficient funds");
+        }
+    }
+
+    public void buy4()
+    {
+        if (money >= priceOfObject4)
+        {
+
+            if (shopItem4 != null)
+            {
+                shopItem4.SetActive(false);
+                backpackItem4.SetActive(true);
+                money -= (int)priceOfObject4;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("insufficient funds");
+        }
+    }
+
+    public void buy5()
+    {
+        if (money >= priceOfObject5)
+        {
+
+            if (shopItem5 != null)
+            {
+                shopItem5.SetActive(false);
+                backpackItem5.SetActive(true);
+                money -= (int)priceOfObject5;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("insufficient funds");
+        }
+    }
+
+    public void buy6()
+    {
+        if (money >= priceOfObject6)
+        {
+
+            if (shopItem6 != null)
+            {
+                shopItem6.SetActive(false);
+                backpackItem6.SetActive(true);
+                money -= (int)priceOfObject6;
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("insufficient funds");
+        }
+    }
+
+    public void movebackpack1()
+    {
+        backpackItem1.SetActive(true);
+        chestItem1.SetActive(false);
+    }
+
+    public void movebackpack2()
+    {
+        backpackItem2.SetActive(true);
+        chestItem2.SetActive(false);
+    }
+
+    public void movebackpack3()
+    {
+        backpackItem3.SetActive(true);
+        chestItem3.SetActive(false);
+    }
+
+    public void movebackpack4()
+    {
+        backpackItem4.SetActive(true);
+        chestItem4.SetActive(false);
+    }
+
+    public void movebackpack5()
+    {
+        backpackItem5.SetActive(true);
+        chestItem5.SetActive(false);
+    }
+
+    public void movebackpack6()
+    {
+        backpackItem6.SetActive(true);
+        chestItem6.SetActive(false);
+    }
+
+    public void movechest1()
+    {
+        backpackItem1.SetActive(false);
+        chestItem1.SetActive(true);
+    }
+
+    public void movechest2()
+    {
+        backpackItem2.SetActive(false);
+        chestItem2.SetActive(true);
+    }
+
+    public void movechest3()
+    {
+        backpackItem3.SetActive(false);
+        chestItem3.SetActive(true);
+    }
+
+    public void movechest4()
+    {
+        backpackItem4.SetActive(false);
+        chestItem4.SetActive(true);
+    }
+
+    public void movechest5()
+    {
+        backpackItem5.SetActive(false);
+        chestItem5.SetActive(true);
+    }
+
+    public void movechest6()
+    {
+        backpackItem6.SetActive(false);
+        chestItem6.SetActive(true);
+    }
+
+    public void sellbackpack1()
+    {
+        backpackItem1.SetActive(false);
+        money += 20;
+    }
+
+    public void sellbackpack2()
+    {
+        backpackItem2.SetActive(false);
+        money += 30;
+    }
+
+    public void sellbackpack3()
+    {
+        backpackItem3.SetActive(false);
+        money += 45;
+    }
+
+    public void sellbackpack4()
+    {
+        backpackItem4.SetActive(false);
+        money += 10;
+    }
+
+    public void sellbackpack5()
+    {
+        backpackItem5.SetActive(false);
+        money += 15;
+    }
+
+    public void sellbackpack6()
+    {
+        backpackItem6.SetActive(false);
+        money += 10;
+    }
+
+    public void pauseMenu()
+    {
+        SceneManager.LoadScene("pause");
+    }
+
+    public void quitbutton()
+    {
+        Application.Quit();
+    }
+
+    public void playandresume()
+    {
+        SceneManager.LoadScene("game");
+    }
+}
+
